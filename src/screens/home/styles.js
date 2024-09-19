@@ -743,7 +743,12 @@ export const FloatingImage = styled.div`
 
     @media (max-width: 1260px) {
         right: 100px;
-        bottom: 175px;
+        bottom: 100px;
+    }
+
+    @media (max-width: 1560px) {
+        right: 150px;
+        bottom: 50px;
     }
 `;
 
@@ -775,7 +780,12 @@ export const FloatingButton = styled.button`
 
     @media (max-width: 1260px) {
         right: 170px;
-        bottom: 175px;
+        bottom: 100px;
+    }
+
+    @media (max-width: 1560px) {
+        right: 220px;
+        bottom: 51px;
     }
 
     
