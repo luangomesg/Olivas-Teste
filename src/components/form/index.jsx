@@ -2,70 +2,78 @@ import { useState, useEffect } from 'react';
 import { Button, CheckboxContainer, CustomCheckbox, Form, HiddenCheckbox, Input, InputContainer, Label, Row, Select, StyledPhoneInput, TextArea } from './styles';
 
 export function FormComponent() {
+    // Define o estado inicial do formulário com valores padrão
     const [formData, setFormData] = useState({
-        fullName: '',
-        corporateEmail: '',
-        phone: '',
-        role: '',
-        message: '',
-        agreeTerms: false,
+        fullName: '',        // Nome completo
+        corporateEmail: '',  // E-mail corporativo
+        phone: '',           // Telefone
+        role: '',            // Função na empresa
+        message: '',         // Mensagem
+        agreeTerms: false,   // Concordância com os termos
     });
 
+    // Define o estado para controlar os erros no formulário
     const [errors, setErrors] = useState({
-        phone: false,
+        phone: false, // Erro relacionado ao campo de telefone
     });
 
+    // useEffect: Solicita permissão para enviar notificações ao carregar o componente
     useEffect(() => {
-
         if (Notification.permission !== 'granted') {
             Notification.requestPermission();
         }
     }, []);
 
+    // Função para lidar com mudanças no campo de telefone
     const handlePhoneChange = (phone) => {
-        setFormData({ ...formData, phone });
-        setErrors({ ...errors, phone: phone === '' });
+        setFormData({ ...formData, phone }); // Atualiza o estado do telefone
+        setErrors({ ...errors, phone: phone === '' }); // Seta erro caso o telefone esteja vazio
     };
 
+    // Função para lidar com mudanças em outros campos do formulário
     const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
+        const { name, value, type, checked } = e.target; // Desestruturação do evento
         setFormData({
             ...formData,
-            [name]: type === 'checkbox' ? checked : value,
+            [name]: type === 'checkbox' ? checked : value, // Atualiza o estado dependendo se é checkbox ou outro tipo de input
         });
     };
 
+    // Função para exibir notificações no navegador
     const showNotification = (message) => {
         if (Notification.permission === 'granted') {
+            // Mostra notificação se a permissão for concedida
             new Notification('Formulário', {
                 body: message,
                 icon: 'https://www.example.com/icon.png',
             });
         } else {
-            alert(message);
+            alert(message); // Alerta caso notificações não estejam habilitadas
         }
     };
 
+    // Função de validação do formulário
     const validateForm = () => {
         const newErrors = {
-            phone: formData.phone === '',
+            phone: formData.phone === '', // Verifica se o campo de telefone está vazio
         };
-        setErrors(newErrors);
+        setErrors(newErrors); // Atualiza o estado de erros
         if (newErrors.phone) {
-            showNotification('O campo telefone é obrigatório.');
+            showNotification('O campo telefone é obrigatório.'); // Notifica se o telefone estiver em branco
         }
-        return !Object.values(newErrors).includes(true);
+        return !Object.values(newErrors).includes(true); // Retorna true se não houver erros
     };
 
+    // Função para lidar com o envio do formulário
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Previne o comportamento padrão de envio do formulário
         if (validateForm()) {
-            console.log(formData);
+            console.log(formData); // Exibe os dados do formulário no console se estiver válido
         }
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}> {/* Início do formulário */}
             <Row>
                 <InputContainer>
                     <Label>Nome Completo <span>*</span></Label>
@@ -74,7 +82,7 @@ export function FormComponent() {
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleChange}
-                        required
+                        required /* Campo obrigatório */
                     />
                 </InputContainer>
                 <InputContainer>
@@ -84,7 +92,7 @@ export function FormComponent() {
                         name="corporateEmail"
                         value={formData.corporateEmail}
                         onChange={handleChange}
-                        required
+                        required /* Campo obrigatório */
                     />
                 </InputContainer>
             </Row>
@@ -93,11 +101,11 @@ export function FormComponent() {
                 <InputContainer>
                     <Label>Telefone <span>*</span></Label>
                     <StyledPhoneInput
-                        country={'br'}
+                        country={'br'} /* Define o país para o campo de telefone */
                         value={formData.phone}
                         onChange={handlePhoneChange}
-                        enableSearch
-                        required
+                        enableSearch /* Habilita busca de código de país */
+                        required /* Campo obrigatório */
                     />
                 </InputContainer>
                 <InputContainer>
@@ -106,7 +114,7 @@ export function FormComponent() {
                         name="role"
                         value={formData.role}
                         onChange={handleChange}
-                        required
+                        required /* Campo obrigatório */
                     >
                         <option value="">Selecione uma opção</option>
                         <option value="Gerente">Gerente</option>
@@ -123,17 +131,18 @@ export function FormComponent() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
+                    required /* Campo obrigatório */
                 />
             </InputContainer>
 
             <CheckboxContainer>
+                {/* Campo de checkbox para concordância com termos */}
                 <HiddenCheckbox
                     type="checkbox"
                     name="agreeTerms"
                     checked={formData.agreeTerms}
                     onChange={handleChange}
-                    required
+                    required /* Campo obrigatório */
                 />
                 <CustomCheckbox checked={formData.agreeTerms} />
                 <Label className='labelCheckBox'>
@@ -141,7 +150,7 @@ export function FormComponent() {
                 </Label>
             </CheckboxContainer>
 
-            <Button type="submit">Receber atendimento</Button>
+            <Button type="submit">Receber atendimento</Button> {/* Botão de envio do formulário */}
         </Form>
     );
 }

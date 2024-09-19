@@ -17,14 +17,17 @@ import orcamento from '../../assets/orcamento.svg';
 import Logo from '../../assets/logoa.svg';
 
 export function Home() {
+    // Estados para controlar a visibilidade do conteúdo e estado de carregamento
     const [showMore, setShowMore] = useState(false);
     const [loading, setLoading] = useState(false);
     const [showButton, setShowButton] = useState(false);
 
+    // Função para alternar o estado do botão flutuante ao clicar na imagem
     const handleImageClick = () => {
         setShowButton(!showButton);
     };
 
+    // Função para mostrar mais conteúdo do blog com um delay de 2 segundos (simulação de carregamento)
     const handleShowMore = async () => {
         setLoading(true);
         setTimeout(() => {
@@ -33,6 +36,7 @@ export function Home() {
         }, 2000);
     };
 
+    // Função para rolar a página até o elemento com o id correspondente
     const handleScrollTo = (id) => {
         const element = document.getElementById(id);
         if (element) {
@@ -42,11 +46,15 @@ export function Home() {
 
     return (
         <>
+            {/* Marca o início do conteúdo "Sobre o teste" para navegação */}
             <span id='teste' />
+
+            {/* Header com logo e menu de navegação */}
             <Header >
                 <div>
                     <img className='imgHeader' src={Logo} alt="" />
                     <Menu>
+                        {/* Links que rolam até as seções específicas */}
                         <p onClick={() => handleScrollTo('teste')}>Sobre o teste</p>
                         <p onClick={() => handleScrollTo('seo')}>SEO</p>
                         <p onClick={() => handleScrollTo('performance')}>Performance</p>
@@ -57,6 +65,7 @@ export function Home() {
                 </div>
             </Header>
 
+            {/* Seção principal com texto e imagem */}
             <Main>
                 <MainText >
                     <h1>Teste de desenvolvimento <br /> <span>Front-end Next.JS</span> </h1>
@@ -69,6 +78,8 @@ export function Home() {
 
             </Main>
             <span className='click2' id='seo' />
+
+            {/* Seção de SEO com texto explicativo e ícones */}
             <ContainerSEO >
 
                 <h1>SEO, ou <span>otimização</span></h1>
@@ -80,6 +91,7 @@ export function Home() {
                             internos e externos de um website para torná-lo mais atrativo <br /> <br />
 
                             O que pode ajudar com os seguintes resultados:</p>
+                        {/* Ícones representando os benefícios do SEO */}
                         <div>
                             <img src={visitas} alt="Imagem-Visitas" /><p>Visitas do seu site</p>
                             <img src={leads} alt="Imagem-Leads" /><p>Mais leads gerados por mês</p>
@@ -88,11 +100,12 @@ export function Home() {
                             <img src={timer} alt="Imagem-Timer" /><p>Tempo de carregamento do site</p>
                         </div>
                     </SeoText>
-                    <SeoImage ></SeoImage>
+                    <SeoImage />
                 </SEO>
                 <span className='click' id='performance' />
             </ContainerSEO >
 
+            {/* Seção de performance com exemplos de melhoria no site */}
             <ContainerPerformance >
                 <h2>Acelere o seu site e melhore sua Performance!</h2>
 
@@ -107,6 +120,7 @@ export function Home() {
                     </div>
                 </PerformanceOne>
                 <PerformanceTwo>
+                    {/* Ícones representando melhorias na performance do site */}
                     <div><img src={velocidade} alt="Imagem-Velocidade" /> <p>Melhore a Velocidade do Carregamento</p></div>
                     <div className='otm'><img src={otimizacao} alt="Image-Otimização" /> <p>Otimização para Mobile</p></div>
                     <div><img src={tecnico} alt="Imagem-Técnico" /> <p>SEO Técnico</p></div>
@@ -115,11 +129,13 @@ export function Home() {
 
             </ContainerPerformance>
 
+            {/* Seção do blog com botão "Veja mais" */}
             <ContainerBlog >
                 <h2>Últimas do <span>Blog</span></h2>
                 <CarouselBlog />
                 <br /><br /><br /><br />
                 {showMore && <CarouselBlog />}
+                {/* Mostra o botão "Veja mais" ou o componente de carregamento */}
                 {loading ? (
                     <LoadingDots /> // Mostra o carregamento enquanto os dados são processados
                 ) : !showMore ? (
@@ -127,6 +143,7 @@ export function Home() {
                 ) : null}
             </ContainerBlog>
 
+            {/* Seção de contato com formulário */}
             <ContainerContato>
                 <ContatoText>
                     <h1>Entre em contato e <span>receba atendimento</span></h1>
@@ -138,6 +155,7 @@ export function Home() {
                 </ContatoForm>
             </ContainerContato>
 
+            {/* Rodapé com informações da empresa e redes sociais */}
             <Footer>
                 <FooterContent>
                     <div className='company'>
@@ -152,6 +170,7 @@ export function Home() {
                             <h5>Redes Sociais</h5>
                             <span>+55 (11)2391-6090</span>
 
+                            {/* Links para redes sociais */}
                             <div className='social'>
                                 <a href="https://www.facebook.com/OlivasDigitalBR/" target="_blank" rel="noopener noreferrer">
                                     <img src={facebook} alt="Imagem-Facebook" />
@@ -171,13 +190,9 @@ export function Home() {
                 </FooterCopyright>
             </Footer>
 
-            {/* Imagem Flutuante e Botão */}
-            <FloatingImage onClick={handleImageClick}>
-                <img src={orcamento} alt="Imagem-Orçamento" />
-            </FloatingImage>
-            <FloatingButton show={showButton} onClick={() => alert('Botão clicado!')}>
-                <p>Orçamento</p>
-            </FloatingButton>
+            {/* Imagem flutuante que ao clicar, exibe o botão flutuante */}
+            <FloatingImage onClick={handleImageClick} src={orcamento} />
+            {showButton && <FloatingButton />}
         </>
     );
 }
