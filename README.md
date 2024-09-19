@@ -13,6 +13,7 @@ Olivas Teste é um projeto desenvolvido utilizando **Vite**, **React** e **Style
 - [Vite](https://vitejs.dev/)
 - [React](https://reactjs.org/)
 - [Styled Components](https://styled-components.com/)
+- [Polished](https://polished.js.org/docs/)
 - Outras bibliotecas e ferramentas complementares
 
 ## Estrutura do Projeto
