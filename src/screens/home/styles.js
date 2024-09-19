@@ -732,21 +732,26 @@ export const FooterCopyright = styled.div`
 
 export const FloatingImage = styled.div`
     position: fixed;
-    right: 270px;
-    bottom: 200px;
-    z-index: 1000;
+    right: 280px;
+    bottom: 170px;
+    z-index: 10000;
     cursor: pointer;
     transition: transform 0.3s ease;
     &:hover {
         transform: scale(1.1);
     }
+
+    @media (max-width: 1260px) {
+        right: 100px;
+        bottom: 175px;
+    }
 `;
 
-export const FloatingButton = styled.div`
+export const FloatingButton = styled.button`
     position: fixed;
-    right: 340px;
-    bottom: 203px;
-    z-index: 1000;
+    right: 350px;
+    bottom: 175px;
+    z-index: 5000;
     display: ${props => props.show ? 'block' : 'none'};
     background-color: ${theme.colors.olivasPurple};
     width: 15.1875rem;
@@ -767,4 +772,11 @@ export const FloatingButton = styled.div`
         color: #ffffff;
         
     }
+
+    @media (max-width: 1260px) {
+        right: 170px;
+        bottom: 175px;
+    }
+
+    
 `;

@@ -191,8 +191,12 @@ export function Home() {
             </Footer>
 
             {/* Imagem flutuante que ao clicar, exibe o botão flutuante */}
-            <FloatingImage onClick={handleImageClick} src={orcamento} />
-            {showButton && <FloatingButton />}
+            <FloatingImage onClick={handleImageClick}>
+                <img src={orcamento} alt="Imagem-Orçamento" />
+            </FloatingImage>
+            <FloatingButton show={showButton} onClick={() => alert('Botão clicado!')}>
+                <p>Orçamento</p>
+            </FloatingButton>
         </>
     );
 }
