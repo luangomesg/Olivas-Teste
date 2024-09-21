@@ -22,11 +22,10 @@ export const Row = styled.div`
 
 export const InputContainer = styled.div`
   display: flex;
-  width: 100%;
-  height: 4rem;
   flex-direction: column;
+  width: 100%;
+  height: 5.5rem;
   flex: 1;
-  align-items: center;
 
 
 `;
@@ -36,7 +35,6 @@ export const Label = styled.label`
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.5rem ;
-  align-self: center; 
   color: #5f5f5f;
 
   span {
@@ -52,33 +50,30 @@ export const Input = styled.input`
   padding: 0.625rem; 
   font-size: 1rem; 
   width: 100%;
+  height: 3.5rem;
   border: 0.09375rem solid ${theme.colors.olivasYellow};
-  border-radius: 0.25rem; 
+  border-radius: 0.5rem; 
 
   &:focus {
     border-color: ${theme.colors.olivasPurple}; 
     outline: none; 
-  }
-
-  @media (max-width: 780px) {
-    width: 50%;
   }
 `;
 
 export const Select = styled.select`
   padding: 0.625rem; 
-  font-size: 1rem; 
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #000000; 
   width: 100%;
+  height: 3.5rem;
   border: 0.09375rem solid ${theme.colors.olivasYellow};
-  border-radius: 0.25rem; 
+  border-radius: 0.5rem; 
 
   &:focus {
     border-color: ${theme.colors.olivasPurple}; 
     outline: none; 
-  }
-
-  @media (max-width: 780px) {
-    width: 50%;
   }
 `;
 
@@ -88,17 +83,13 @@ export const TextArea = styled.textarea`
   height: 9.75rem;
   font-size: 1rem; 
   border: 0.09375rem solid ${theme.colors.olivasYellow};
-  border-radius: 0.25rem; 
+  border-radius: 1rem; 
   min-height: 6.25rem; 
   align-self: center;
 
   &:focus {
     border-color: ${theme.colors.olivasPurple}; 
     outline: none; 
-  }
-
-  @media (max-width: 780px) {
-    width: 50%;
   }
 `;
 
@@ -117,10 +108,6 @@ export const CheckboxContainer = styled.div`
     a {
       color: #5d5d5d;
     }
-  }
-
-  @media (max-width: 780px) {
-    width: 50%;
   }
 `;
 
@@ -145,17 +132,14 @@ export const StyledPhoneInput = styled(PhoneInput)`
   .react-tel-input {
     width: 100%;
     padding: 0.625rem; 
-    border-radius: 0.25rem; 
     font-size: 1rem; 
     
-    
-
-  
   }
   .flag-dropdown {
     border: 0.09375rem solid ${theme.colors.olivasYellow};
     border-right: none;
     background: transparent;
+    border-radius: 0.5rem 0 0 0.5rem; 
     
     
     &:focus-within {
@@ -164,27 +148,20 @@ export const StyledPhoneInput = styled(PhoneInput)`
      
     }
 
-    @media (max-width: 780px) {
-      transform: translateX(105px);
-  }
-
   }
 
   .form-control {
     width: 100%;
-    height: 2.7rem;
+    height: 3.5rem;
     border: 0.09375rem solid ${theme.colors.olivasYellow};
+    font-size: 1rem;
+    border-radius: 0.5rem; 
     
 
     &:focus {
       border: 0.09375rem solid ${theme.colors.olivasPurple};
       
     }
-
-    @media (max-width: 780px) {
-    width: 50%;
-    transform: translateX(105px);
-  }
   }
 `;
 

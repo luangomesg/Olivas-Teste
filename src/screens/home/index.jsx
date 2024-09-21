@@ -159,16 +159,16 @@ export function Home() {
             <Footer>
                 <FooterContent>
                     <div className='company'>
-                        <img src={Logo} alt="" />
+                        <img src={Logo} alt="Olivas-Logo" />
                         <p>A Olivas Digital é uma martech (marketing technology company), que há mais de 10 anos ajuda empresas de todos os portes e segmentos
                             a impulsionarem suas vendas no digital.</p>
                     </div>
                     <div className='talk'>
                         <h6>Fale Conosco</h6>
                         <div>
-                            <h5>Atendimento</h5>
+                            <h4>Atendimento</h4>
                             <h5>Redes Sociais</h5>
-                            <span>+55 (11)2391-6090</span>
+                            <span>+55 (11) 2391-6090</span>
 
                             {/* Links para redes sociais */}
                             <div className='social'>
@@ -186,7 +186,7 @@ export function Home() {
                     </div>
                 </FooterContent>
                 <FooterCopyright>
-                    <p>© 2014-2024 - Olivas Digital</p>
+                    <p><span> © </span>2014-2024 - Olivas Digital</p>
                 </FooterCopyright>
             </Footer>
 
