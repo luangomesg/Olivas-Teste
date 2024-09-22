@@ -4,6 +4,7 @@ import seo from '../../assets/seo.svg'
 import mainImage from '../../assets/main.svg'
 import { theme } from "../../styles/theme";
 import { darken } from "polished";
+import breakpoints from "../../styles/breakPoints";
 
 
 export const Header = styled.header`
@@ -21,13 +22,64 @@ export const Header = styled.header`
         display: flex;
         width: 78.5rem;
         height: 5.375rem;
+
+       .menu-click {
+            
+            width: 20px;
+        }
     
     .imgHeader {
         width: 100%;
         max-width: 270px;
     }
 
+    @media ${breakpoints.xll} {
+    padding: 0 2rem 0 2rem;
 }
+
+    @media ${breakpoints.xl} {
+        padding: 0 4rem 0 4rem;
+        
+        .imgHeader {
+            max-width: 200px;
+            margin-left: 5rem;
+        }
+        
+    }
+
+    @media ${breakpoints.lg} {
+        padding: 0 6rem 0 6rem;
+
+        .imgHeader {
+            max-width: 150px;
+            margin-left: 8rem;
+        }
+    }
+
+    @media ${breakpoints.md} {
+
+        .imgHeader {
+            margin-left: 12rem;
+        }
+    }
+
+    @media ${breakpoints.sm} {
+        padding: 0 10rem 0 10rem;
+        .imgHeader {
+            margin-left: 16rem;
+        }
+    }
+
+    @media ${breakpoints.xs} {
+    
+        .imgHeader {
+            margin-left: 22rem;
+        }
+    }
+
+}
+
+
 `
 
 
@@ -36,10 +88,36 @@ export const Menu = styled.div`
     display: flex;
     width: 58.4375rem;
     height: 5.375rem;
-    padding: 1.5rem 0;
+    padding: 1.5 0;
     gap: 2rem;
     align-items: center;
     justify-content: flex-end;
+
+    .click-menu {
+        position: absolute;
+        display: none;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        transform: translate(-15px, 25px);
+
+
+        ${({ isOpen }) =>
+        isOpen &&
+        `
+      img {
+        transform: rotate(-90deg) ;
+         
+      }
+      
+    `}
+
+        img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.4s ease-in-out;
+        }
+    }
 
 
     p {
@@ -52,6 +130,61 @@ export const Menu = styled.div`
         &:hover {
             color: ${theme.colors.olivasYellow};
         }
+    }
+
+    @media ${breakpoints.md} {
+        justify-content: start;
+        gap: 1.5rem;
+     
+    }
+
+    @media ${breakpoints.sm} {
+        
+        flex-direction: column;
+        z-index: 10000;
+        
+
+        p {
+            opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+            transform: translate(-38px, 70px);
+            background-color: ${theme.colors.olivasPurple};
+            padding: 0.5rem;
+            width: 10rem;
+            text-align: center;
+            color: #ffffff;
+            border-radius: 0.5rem;
+            margin-bottom: -23px;
+
+            
+        }
+
+        ${({ isOpen }) =>
+        isOpen &&
+        `
+      p {
+        opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+            transition: opacity 0.5s ease;
+         
+      }
+      
+    `}
+
+        .click-menu {
+            display: block;
+            transform: translate(-55px, 25px);
+            
+        }
+    }
+
+    @media ${breakpoints.xs} {
+
+        p {
+            transform: translate(-210px, 70px);
+        }
+          .click-menu {
+            transform: translate(-225px, 25px);
+            
+          }
     }
 
 `

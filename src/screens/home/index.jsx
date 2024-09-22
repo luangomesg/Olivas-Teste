@@ -14,6 +14,7 @@ import facebook from '../../assets/facebook.svg';
 import instagram from '../../assets/instagram.svg';
 import linkedin from '../../assets/linkedin.svg';
 import orcamento from '../../assets/orcamento.svg';
+import iconmenu from '../../assets/iconmenu.svg';
 import Logo from '../../assets/logoa.svg';
 
 export function Home() {
@@ -21,6 +22,11 @@ export function Home() {
     const [showMore, setShowMore] = useState(false);
     const [loading, setLoading] = useState(false);
     const [showButton, setShowButton] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
 
     // Função para alternar o estado do botão flutuante ao clicar na imagem
     const handleImageClick = () => {
@@ -53,7 +59,7 @@ export function Home() {
             <Header >
                 <div>
                     <img className='imgHeader' src={Logo} alt="" />
-                    <Menu>
+                    <Menu isOpen={menuOpen}>
                         {/* Links que rolam até as seções específicas */}
                         <p onClick={() => handleScrollTo('teste')}>Sobre o teste</p>
                         <p onClick={() => handleScrollTo('seo')}>SEO</p>
@@ -61,6 +67,9 @@ export function Home() {
                         <p onClick={() => handleScrollTo('blog')}>Blog</p>
                         <ButtonSearch />
                         <Button variant='header'>Contato</Button>
+                        <div className='click-menu' onClick={toggleMenu}>
+                            <img src={iconmenu} alt="Imagem-Menu" />
+                        </div>
                     </Menu>
                 </div>
             </Header>

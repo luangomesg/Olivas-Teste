@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { theme } from '../../styles/theme';
 import { darken } from 'polished';
+import breakpoints from "../../styles/breakPoints";
 
 // Estilização do botão baseado na prop $variant
 export const Container = styled.button`
@@ -19,6 +20,36 @@ export const Container = styled.button`
                 return '12.0625rem'; // Valor padrão para o botão
         }
     }};
+
+@media ${breakpoints.xl} {
+        width: ${(props) => {
+        switch (props.$variant) {
+            case 'header':
+                return '10rem'; // Largura do botão no header para telas pequenas
+            case 'main':
+                return '17.6875rem'; // Largura do botão na main para telas pequenas
+            case 'blog':
+                return '10.8125rem'; // Largura do botão no blog para telas pequenas
+            case 'mais':
+                return '11rem'; // Largura do botão 'mais' para telas pequenas
+            default:
+                return '12.0625rem'; // Valor padrão para telas pequenas
+        }
+    }};
+    }
+
+   @media ${breakpoints.md} {
+    display: ${props => {
+        switch (props.$variant) {
+            case 'header':
+                return 'none'
+
+            default:
+                break;
+        }
+    }}
+   } 
+
 
     // Definição da altura do botão com base na variação passada via prop $variant
     height: ${(props) => {
