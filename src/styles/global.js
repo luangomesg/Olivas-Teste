@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import breakpoints from "./breakPoints";
 
 export default createGlobalStyle`
     *{
@@ -17,10 +18,14 @@ export default createGlobalStyle`
         flex-direction: column;
         align-items: center;
         max-width: 1920px;
-        width: 99vw;
+        width: 98vw;
         margin: 0 auto;
         .click2 {
         transform: translateY(-70px);
+    }
+
+    @media ${breakpoints.xll} {
+        width: 95vw;
     }
 
     }

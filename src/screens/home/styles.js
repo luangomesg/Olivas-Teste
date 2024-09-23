@@ -10,7 +10,6 @@ import breakpoints from "../../styles/breakPoints";
 export const Header = styled.header`
     display: flex;
     width: 100%;
-    min-width: 1200px;
     height: 6.625rem;
     align-items: center;
     justify-content: center;
@@ -342,11 +341,11 @@ export const MainText = styled.div`
         height: 37rem;
 
         h1 {
-            font-size: 1.8rem;
+            font-size: 35px;
             line-height: 2.5rem;
 
             span {
-                font-size: 1.8rem;
+                font-size: 35px;
                 line-height: 2.5rem;
             }
         }
@@ -467,10 +466,10 @@ export const ContainerSEO = styled.div`
         height: 80rem;
 
         h1 {
-            font-size: 2.4rem;
+            font-size: 40px;
 
             span {
-                font-size: 2.4rem;
+                font-size: 40px;
             }
         }
        }
@@ -697,11 +696,11 @@ export const PerformanceOne = styled.div`
         div {
             h2 {
                 width: 25rem;
-                font-size: 2rem;
+                font-size: 40px;
                 margin: 0 2rem 0 2rem;
 
                 span {
-                    font-size: 2rem;
+                    font-size: 40px;
                 }
                 margin-bottom: 2rem;
             }
@@ -717,7 +716,7 @@ export const PerformanceOne = styled.div`
 
     @media ${breakpoints.xs} {
 
-        margin-bottom: 15rem;
+        margin-bottom: 18rem;
 
         div {
 
