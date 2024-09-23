@@ -3,6 +3,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { theme } from "../../styles/theme";
 import { darken } from "polished";
+import breakpoints from "../../styles/breakPoints";
 
 export const Form = styled.form`
   display: flex;
@@ -18,6 +19,20 @@ export const Row = styled.div`
   width: 54.375rem;
   height: 5.5rem;
   gap: 1.25rem; 
+
+  @media ${breakpoints.md} {
+    width: 40rem;
+  }
+
+  @media ${breakpoints.sm} {
+    width: 25rem;
+  }
+
+  @media ${breakpoints.xs} {
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -27,13 +42,26 @@ export const InputContainer = styled.div`
   height: 5.5rem;
   flex: 1;
 
+  @media ${breakpoints.md} {
+    width: 40rem;
+    align-items: center;
+  }
+
+  @media ${breakpoints.sm} {
+    width: 25rem;
+  }
+
+  @media ${breakpoints.xs} {
+    width: 50%;
+  }
+
 
 `;
 
 export const Label = styled.label`
   margin-bottom: 0.5rem; 
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5rem ;
   color: #5f5f5f;
 
@@ -58,6 +86,12 @@ export const Input = styled.input`
     border-color: ${theme.colors.olivasPurple}; 
     outline: none; 
   }
+
+  @media ${breakpoints.md} {
+    width: 100%;
+  }
+
+ 
 `;
 
 export const Select = styled.select`
@@ -75,6 +109,10 @@ export const Select = styled.select`
     border-color: ${theme.colors.olivasPurple}; 
     outline: none; 
   }
+
+  @media ${breakpoints.md} {
+    width: 100%;
+  }
 `;
 
 export const TextArea = styled.textarea`
@@ -91,11 +129,20 @@ export const TextArea = styled.textarea`
     border-color: ${theme.colors.olivasPurple}; 
     outline: none; 
   }
+
+  @media ${breakpoints.md} {
+    width: 100%;
+  }
+
+  @media ${breakpoints.xs} {
+    width: 50%;
+  }
 `;
 
 export const CheckboxContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   gap: 0.625rem; 
 
@@ -107,6 +154,18 @@ export const CheckboxContainer = styled.div`
 
     a {
       color: #5d5d5d;
+    }
+
+    @media ${breakpoints.md} {
+      width: 40rem;
+    }
+
+    @media ${breakpoints.sm} {
+      width: 25rem;
+    }
+
+    @media ${breakpoints.xs} {
+      width: 15rem;
     }
   }
 `;
@@ -126,13 +185,29 @@ export const Button = styled.button`
   &:hover {
     background-color: ${darken(0.07, theme.colors.olivasYellow)};
   }
+
+  @media ${breakpoints.sm} {
+    width: 19rem;
+    
+  }
+
+  @media ${breakpoints.xs} {
+    width: 16.5rem;
+  }
 `;
 
 export const StyledPhoneInput = styled(PhoneInput)`
+
+@media ${breakpoints.sm} {
+    margin-top: 1rem;
+  }
   .react-tel-input {
     width: 100%;
     padding: 0.625rem; 
     font-size: 1rem; 
+    
+
+    
     
   }
   .flag-dropdown {
@@ -141,12 +216,14 @@ export const StyledPhoneInput = styled(PhoneInput)`
     background: transparent;
     border-radius: 0.5rem 0 0 0.5rem; 
     
-    
     &:focus-within {
       border: 0.09375rem solid ${theme.colors.olivasPurple};
       border-right: none;
      
     }
+
+    
+    
 
   }
 
@@ -162,11 +239,17 @@ export const StyledPhoneInput = styled(PhoneInput)`
       border: 0.09375rem solid ${theme.colors.olivasPurple};
       
     }
+
+    @media ${breakpoints.md} {
+
+    width: 100%;
+  }
   }
 `;
 
 export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
-  position: absolute;
+  position: relative;
+  left: 40px;
   opacity: 0;
   cursor: pointer;
   width: 2rem;

@@ -843,6 +843,16 @@ export const ContainerContato = styled.div`
     gap: 4rem;
     margin-bottom: 4rem;
 
+    @media ${breakpoints.sm} {
+        margin-bottom: 14rem;
+    }
+
+    @media ${breakpoints.xs} {
+        margin-bottom: 40rem;
+    }
+
+
+
 `
 
 export const ContatoText = styled.div`
@@ -873,6 +883,53 @@ export const ContatoText = styled.div`
             line-height: 1.5rem;
             color: #5d5d5d;
         }
+
+        @media ${breakpoints.md} {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+            height: 100%;
+            width: 50rem;
+            
+
+            h1 {
+
+                width: 45rem;
+                
+            }
+
+            p {
+                width: 45rem;
+            }
+        }
+
+        @media ${breakpoints.sm} {
+
+            h1 {
+
+            width: 25rem;
+
+
+        }
+
+            p {
+            width: 25rem;
+        }
+        }
+
+        @media ${breakpoints.xs} {
+
+            h1 {
+                width: 20rem;
+
+
+            }
+
+            p {
+                width: 20rem;
+            }
+        }
 `
 
 export const ContatoForm = styled.div`
@@ -887,6 +944,10 @@ export const Footer = styled.footer`
     width: 100%;
     height: 14.1875rem;
     background-color: #E6E6E6;
+
+    @media ${breakpoints.sm} {
+        height: 100%;
+    }
 
 `
 
@@ -916,6 +977,26 @@ export const FooterContent = styled.div`
             font-size: 0.875rem;
             line-height: 1.05rem;
             color: #7f7f7f;
+        }
+
+        @media ${breakpoints.md} {
+
+            padding-left: 5rem;
+
+            p {
+                width: 20rem;
+            }
+        }
+
+        @media ${breakpoints.sm} {
+
+            p {
+                width: 10rem;
+            }
+        }
+
+        @media ${breakpoints.xs} {
+            padding-left: 0;
         }
     }
 
@@ -971,7 +1052,38 @@ export const FooterContent = styled.div`
                 height: 2rem;
             }
         }
+
+        @media ${breakpoints.md} {
+           display: flex;
+           height: 100%;
+           flex-direction: column;
+
+           .social {
+            flex-direction: row;
+           }
         }
+        }
+
+        @media ${breakpoints.sm} {
+            display: flex;
+            flex-direction: column;
+            margin-top: 3rem;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    @media ${breakpoints.md} {
+        height: 100%;
+    }
+
+    @media ${breakpoints.sm} {
+        
+        margin-bottom: 5rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 `
 
@@ -1009,6 +1121,15 @@ export const FloatingImage = styled.div`
     &:hover {
         transform: scale(1.1);
     }
+
+    @media ${breakpoints.xll} {
+        right: 80px;
+        bottom: 170px;
+    }
+
+    @media ${breakpoints.xs} {
+        right: 10px ;
+    }
 `;
 
 export const FloatingButton = styled.button`
@@ -1035,6 +1156,15 @@ export const FloatingButton = styled.button`
         line-height: 1.5rem;
         color: #ffffff;
         
+    }
+
+    @media ${breakpoints.xll} {
+        right: 150px;
+        bottom: 170px;
+    }
+
+    @media ${breakpoints.xs} {
+        right: 80px;
     }
 
     
