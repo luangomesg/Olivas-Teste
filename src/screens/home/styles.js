@@ -209,6 +209,22 @@ export const Main = styled.main`
     gap: 0.5rem;
     margin-top: 6rem;
 
+    @media ${breakpoints.xll} {
+       
+    padding: 0 2rem 0 2rem;
+
+    }
+
+    @media ${breakpoints.xl} {
+        
+        padding: 0 2rem 0 6rem;
+      
+    }
+
+    @media ${breakpoints.lg} {
+        padding: 0 2rem 0 7rem;
+    }
+
     
 `
 
@@ -244,6 +260,102 @@ export const MainText = styled.div`
         width: 41.9375rem;
     }
 
+    @media ${breakpoints.xl} {
+
+        width: 39rem;
+
+        h1 {
+            font-size: 2.5rem;
+        line-height: 3.375rem;
+
+        span {
+            font-size: 2.5rem;
+        }
+        }
+        
+        p {
+            width: 32rem;
+        }
+      
+    }
+
+    @media ${breakpoints.lg} {
+
+        width: 33rem;
+
+        h1 {
+            font-size: 2.2rem;
+
+            span {
+                font-size: 2.2rem;
+            }
+        }
+
+        p {
+            width: 29rem;
+            
+        }
+    }
+
+    @media ${breakpoints.md} {
+        width: 100%;
+        height: 28rem;
+        align-items: center;
+        text-align:center;
+        margin: 0 2rem 0 0;
+        
+        h1 {
+            font-size: 2.5rem;
+
+            span {
+                font-size: 2.5rem;
+            }
+        }
+
+        p {
+            width: 35rem;
+        }
+    }
+
+    @media ${breakpoints.sm} {
+        height: 32rem;
+        margin: 0 3rem 0 0;
+        padding-right: 4rem;
+
+        h1 {
+            font-size: 2.1rem;
+
+            span {
+                font-size: 2.1rem;
+            }
+        }
+
+        p {
+            width: 25rem;
+            font-size: 1.10rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    @media ${breakpoints.xs} {
+        padding: 0 5rem 0 0;
+        height: 37rem;
+
+        h1 {
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+
+            span {
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+            }
+        }
+
+        p {
+            width: 15rem;
+        }
+    }
+
 `
 
 export const MainImage = styled.div`
@@ -255,6 +367,20 @@ export const MainImage = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    @media ${breakpoints.xl} {
+        width: 23rem;
+        height: 23rem;
+    }
+
+    @media ${breakpoints.lg} {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    @media ${breakpoints.md} {
+        display: none;
+    }
 
 
 `

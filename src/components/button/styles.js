@@ -27,7 +27,24 @@ export const Container = styled.button`
             case 'header':
                 return '10rem'; // Largura do botão no header para telas pequenas
             case 'main':
-                return '17.6875rem'; // Largura do botão na main para telas pequenas
+                return '15rem'; // Largura do botão na main para telas pequenas
+            case 'blog':
+                return '10.8125rem'; // Largura do botão no blog para telas pequenas
+            case 'mais':
+                return '11rem'; // Largura do botão 'mais' para telas pequenas
+            default:
+                return '12.0625rem'; // Valor padrão para telas pequenas
+        }
+    }};
+    }
+
+    @media ${breakpoints.xs} {
+        width: ${(props) => {
+        switch (props.$variant) {
+            case 'header':
+                return '10rem'; // Largura do botão no header para telas pequenas
+            case 'main':
+                return '13rem'; // Largura do botão na main para telas pequenas
             case 'blog':
                 return '10.8125rem'; // Largura do botão no blog para telas pequenas
             case 'mais':
@@ -66,6 +83,23 @@ export const Container = styled.button`
                 return '3.1875rem'; // Valor padrão para o botão
         }
     }};
+
+@media ${breakpoints.xs} {
+    height: ${(props) => {
+        switch (props.$variant) {
+            case 'header':
+                return '3.1875rem'; // Altura do botão no header
+            case 'main':
+                return '3rem';      // Altura do botão na main
+            case 'blog':
+                return '3.5rem';    // Altura do botão no blog
+            case 'mais':
+                return '4rem';      // Altura do botão 'mais'
+            default:
+                return '3.1875rem'; // Valor padrão para o botão
+        }
+    }};
+}
     
     // Estilização comum para todos os botões
     border-radius: 3.125rem; // Bordas arredondadas
