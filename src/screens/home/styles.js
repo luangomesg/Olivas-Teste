@@ -342,11 +342,11 @@ export const MainText = styled.div`
         height: 37rem;
 
         h1 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             line-height: 2.5rem;
 
             span {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 line-height: 2.5rem;
             }
         }
@@ -467,10 +467,10 @@ export const ContainerSEO = styled.div`
         height: 80rem;
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
 
             span {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
         }
        }
@@ -588,6 +588,42 @@ export const ContainerPerformance = styled.div`
         color: ${theme.colors.olivasPurple};
     }
 
+    @media ${breakpoints.xl} {
+        width: 99%;
+     
+    }
+
+    @media ${breakpoints.lg} {
+        width: 90%;
+        height: 100%;
+        box-shadow: 0px 8px 12px -2px rgba(133, 133, 133, 0.3);
+        border-radius: 2rem;
+        margin-bottom: 2rem;
+
+        >h2 {
+            text-align: center;
+        }
+        
+    }
+
+    @media ${breakpoints.md} {
+
+        padding-left: 2rem;
+        text-align: center;
+    }
+
+    @media ${breakpoints.sm} {
+
+        >h2 {
+            font-size: 2.5rem;
+            
+        }
+    }
+
+    @media ${breakpoints.xs} {
+        padding: 0 3rem 0 3rem;
+    }
+
 `
 
 export const PerformanceOne = styled.div`
@@ -627,6 +663,76 @@ export const PerformanceOne = styled.div`
 
         
     }
+
+    @media ${breakpoints.lg} {
+        margin-bottom: 2rem;
+        gap: 3rem;
+
+        img {
+            width: 20rem;
+            height: 18rem;
+            
+        }
+
+        div {
+            width: 30rem;
+
+            
+            
+        }
+        
+    }
+
+    @media ${breakpoints.md} {
+        width: 100%;
+
+        img {
+            display: none;
+        }
+    }
+
+    @media ${breakpoints.sm} {
+        margin-bottom: 5rem;
+
+        div {
+            h2 {
+                width: 25rem;
+                font-size: 2rem;
+                margin: 0 2rem 0 2rem;
+
+                span {
+                    font-size: 2rem;
+                }
+                margin-bottom: 2rem;
+            }
+
+            p { 
+                width: 25rem;
+                margin: 0 2rem 0 2rem;
+                
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    @media ${breakpoints.xs} {
+
+        margin-bottom: 15rem;
+
+        div {
+
+            h2 {
+                
+                width: 14rem;
+            }
+
+            p {
+                font-size: 1.15rem;
+                width: 16rem;
+                
+            }
+        }
+    }
 `
 
 export const PerformanceTwo = styled.div`
@@ -662,6 +768,34 @@ export const PerformanceTwo = styled.div`
 
     .otm {
         width: 6.0625rem;
+    }
+
+    @media ${breakpoints.sm} {
+
+        gap: 3rem;
+
+        div {
+
+            p {
+                font-size: 1rem;
+                line-height: 1.10rem;
+            }
+        }
+    }
+
+    @media ${breakpoints.xs} {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        
+
+        div {
+
+            img {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
     }
 
     
