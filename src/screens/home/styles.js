@@ -422,6 +422,58 @@ export const ContainerSEO = styled.div`
             line-height: 3.375rem;
         }
     }
+
+    @media ${breakpoints.xll} {
+        width: 73rem;
+        
+   
+       }
+
+       @media ${breakpoints.xl} {
+        width: 65rem;
+       }
+
+       @media ${breakpoints.lg} {
+        width: 57rem;
+        height: 48rem;
+       }
+
+       @media ${breakpoints.md} {
+        width: 90%;
+        max-width: 48rem;
+        height: 42rem;
+       }
+
+       @media ${breakpoints.sm} {
+
+        height: 44rem;
+
+        h1 {
+            font-size: 2.4rem;
+
+            span {
+                font-size: 2.4rem;
+            }
+        }
+       }
+       
+       @media ${breakpoints.sm} {
+        
+
+        height: 44rem;
+       }
+
+       @media ${breakpoints.xs} {
+        height: 80rem;
+
+        h1 {
+            font-size: 2.2rem;
+
+            span {
+                font-size: 2.2rem;
+            }
+        }
+       }
 `
 
 export const SEO = styled.div`
@@ -453,6 +505,50 @@ export const SeoText = styled.div`
         
     }
 
+    @media ${breakpoints.lg} {
+        width: 27.5rem;
+    }
+
+    @media ${breakpoints.md} {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .seoText {
+            width: 40rem;
+        }
+    }
+
+    @media ${breakpoints.sm} {
+
+        .seoText {
+            width: 26rem;
+            font-size: 1.15rem;
+        }
+    }
+
+    @media ${breakpoints.xs} {
+
+        div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+        
+    }
+
+        p {
+            font-size: 1.10rem;
+            margin-bottom: 1rem;
+            width: 12.5rem;
+        }
+        .seoText {
+            width: 16rem;
+        }
+    }
+
     
 `
 
@@ -461,6 +557,17 @@ export const SeoImage = styled.div`
     height: 26rem;
     background-image: url(${seo});
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media ${breakpoints.lg} {
+        width: 27rem;
+        height: 100%;
+    }
+
+    @media ${breakpoints.md} {
+        display: none;
+    }
 
 `
 

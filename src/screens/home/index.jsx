@@ -95,7 +95,7 @@ export function Home() {
 
                 <SEO>
                     <SeoText >
-                        <p>É uma estratégia crucial para melhorar a visibilidade e o ranking de um site nos resultados de pesquisa orgânica de motores de
+                        <p className='seoText'>É uma estratégia crucial para melhorar a visibilidade e o ranking de um site nos resultados de pesquisa orgânica de motores de
                             busca como Google, Bing e Yahoo. A prática de SEO envolve uma série de técnicas e metodologias que visam otimizar aspectos
                             internos e externos de um website para torná-lo mais atrativo <br /> <br />
 
