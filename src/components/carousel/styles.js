@@ -35,6 +35,7 @@ export const CarouselItem = styled.div`
   height: 100%;
   box-shadow: 0px 10px 18px -2px rgba(133, 133, 133, 0.3);
   border-radius: 1.5rem;
+  overflow: hidden;
 
 
   img {
