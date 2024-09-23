@@ -821,6 +821,17 @@ export const ContainerBlog = styled.div`
         }
     }
 
+    @media ${breakpoints.xl} {
+        width: 58rem;
+    }
+
+    @media ${breakpoints.xs} {
+
+        >h2 {
+            font-size: 2.5rem;
+        }
+    }
+
 `
 
 export const ContainerContato = styled.div`

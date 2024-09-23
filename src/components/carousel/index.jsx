@@ -46,7 +46,7 @@ export function CarouselBlog() {
                 }
             },
             {
-                breakpoint: 780,
+                breakpoint: 915,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,

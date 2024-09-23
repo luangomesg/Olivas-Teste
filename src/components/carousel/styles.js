@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import Slider from "react-slick";
 import { theme } from '../../styles/theme'
+import breakpoints from "../../styles/breakPoints";
 
 export const StyledSlider = styled(Slider)`
   display: flex;
   height: 31rem;
     .slick-slide {
     display: flex;
+    
     justify-content: center;
     padding: 0 15px;
   }
@@ -36,6 +38,7 @@ export const CarouselItem = styled.div`
 
 
   img {
+    
     max-width: 100%;
     height: 13rem;
     object-fit: cover;
@@ -71,6 +74,24 @@ export const CarouselItem = styled.div`
     text-overflow: ellipsis;
     margin-top: 0.8rem;
     margin-bottom: 1.5rem;
+  }
+
+  @media ${breakpoints.xl} {
+    max-width: 30rem;
+    
+    
+  }
+
+  @media ${breakpoints.md} {
+    max-width: 100%;
+  }
+
+  @media ${breakpoints.sm} {
+    max-width: 60%;
+  }
+
+  @media ${breakpoints.xs} {
+    max-width: 50%;
   }
 `
 
