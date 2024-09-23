@@ -224,6 +224,10 @@ export const Main = styled.main`
         padding: 0 2rem 0 7rem;
     }
 
+    @media ${breakpoints.xs} {
+        margin-top: 10rem;
+    }
+
     
 `
 
@@ -723,6 +727,7 @@ export const PerformanceOne = styled.div`
             h2 {
                 
                 width: 14rem;
+                transform: translateX(10px);
             }
 
             p {

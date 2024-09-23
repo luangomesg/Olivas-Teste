@@ -93,6 +93,14 @@ export const CarouselItem = styled.div`
 
   @media ${breakpoints.xs} {
     max-width: 50%;
+
+    h5 {
+      width: 15rem;
+    }
+
+    p {
+      width: 15rem;
+    }
   }
 `
 
